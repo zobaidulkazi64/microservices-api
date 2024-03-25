@@ -1,5 +1,4 @@
 import express from 'express';
-import axios from 'axios';
 import morgan from 'morgan';
 import cors from 'cors';
 
@@ -11,25 +10,15 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+app.get('/health', (req, res) => {
+    res.status(200).send('Hello!, I am live on!, on port 4000');
 })
 
-app.post('/auth', (req, res) => {
-    try {
-        const { username, password } = req.body
 
-      const user =  axios.post('http://localhost:3001/auth', {
-            username,
-            password
-        })
 
-        res.send(user)
-    } catch (error) {
-        console.log(error)
-    }
-})
+const port = process.env.PORT || 4000
+const serviceName = process.env.SERVICE_NAME || 'user-service'
 
-app.listen(3000, () => {
-  console.log('Server started on port 3000')  
+app.listen(port, () => {
+  console.log(`${serviceName} started on port ${port}`)  
 })
