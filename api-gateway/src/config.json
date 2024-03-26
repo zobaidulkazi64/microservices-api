@@ -1,0 +1,34 @@
+{
+    "services": {
+        "user": {
+            "url": "http://localhost:4000",
+            "routes": {
+                "path": "/user",
+                "methods": ["POST"]
+                
+            },
+            "auth": {
+                "url": "http://localhost:4001",
+                "routes": {
+                    "path": "/auth",
+                    "methods": ["POST"]
+                }
+            },
+            "inventory": {
+                "url": "http://localhost:4003",
+                "routes": {
+                    "path": "/inventory",
+                    "methods": ["POST"]
+                }
+            },
+            
+            "email": {
+                "url": "http://localhost:4004",
+                "routes": {
+                    "path": "/email",
+                    "methods": ["POST"]
+                }
+            }
+        }
+    }
+}

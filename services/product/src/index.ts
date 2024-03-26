@@ -1,11 +1,7 @@
 import express from "express";
-import axios from "axios";
 import morgan from "morgan";
 import cors from "cors";
-import dotenv from "dotenv";
-
-dotenv.config();
-import router from "./routes";
+import route from "./routes";
 
 const app = express();
 app.use(express.json());
@@ -13,15 +9,15 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 
-// routes
-app.use("/auth", router);
+// call routes
+app.use("/api", route);
 
 app.get("/health", (req, res) => {
-  res.send(`Hello!, I am live on!, on port 4002`);
+  res.status(200).send("Hello!, I am live on!, on port 4000");
 });
 
-const port = process.env.PORT || 4001;
-const serviceName = process.env.SERVICE_NAME || "auth-service";
+const port = process.env.PORT || 4000;
+const serviceName = process.env.SERVICE_NAME || "user-service";
 
 app.listen(port, () => {
   console.log(`${serviceName} started on port ${port}`);

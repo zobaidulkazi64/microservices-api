@@ -16,6 +16,7 @@ const getUserById = async (req: Request, res: Response, next: NextFunction) => {
                 where: {
                     authUserId: id
 
+                    
                 },
                 
             })
