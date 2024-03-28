@@ -1,34 +1,54 @@
 {
-    "services": {
-        "user": {
-            "url": "http://localhost:4000",
-            "routes": {
-                "path": "/user",
-                "methods": ["POST"]
-                
-            },
-            "auth": {
-                "url": "http://localhost:4001",
-                "routes": {
-                    "path": "/auth",
-                    "methods": ["POST"]
-                }
-            },
-            "inventory": {
-                "url": "http://localhost:4003",
-                "routes": {
-                    "path": "/inventory",
-                    "methods": ["POST"]
-                }
-            },
-            
-            "email": {
-                "url": "http://localhost:4004",
-                "routes": {
-                    "path": "/email",
-                    "methods": ["POST"]
-                }
-            }
+  "services": {
+    "user": {
+      "url": "http://localhost:4000",
+      "routes": {
+        "path": "/user",
+        "method": ["POST"]
+      },
+      "auth": {
+        "url": "http://localhost:4001",
+        "routes": {
+          "path": "/auth",
+          "method": ["POST"]
         }
+      },
+      "inventory": {
+        "url": "http://localhost:4003",
+        "routes": {
+          "path": "/inventory",
+          "method": ["POST"]
+        }
+      },
+
+      "email": {
+        "url": "http://localhost:4004",
+        "routes": {
+          "path": "/email",
+          "method": ["POST"]
+        }
+      },
+      "product": {
+        "url": "http://localhost:4005",
+        "routes": {
+          "path": "/product",
+          "method": ["POST"]
+        }
+      },
+      "cart": {
+        "url": "http://localhost:4006",
+        "routes": {
+          "path": "/cart",
+          "method": ["POST"]
+        }
+      },
+      "order": {
+        "url": "http://localhost:4007",
+        "routes": {
+          "path": "/order",
+          "method": ["POST"]
+        }
+      }
     }
+  }
 }
