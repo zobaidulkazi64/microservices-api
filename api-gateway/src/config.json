@@ -48,6 +48,34 @@
           "path": "/order",
           "method": ["POST"]
         }
+      },
+      "payment": {
+        "url": "http://localhost:4008",
+        "routes": {
+          "path": "/payment",
+          "method": ["POST"]
+        }
+      },
+      "shipping": {
+        "url": "http://localhost:4009",
+        "routes": {
+          "path": "/shipping",
+          "method": ["POST"]
+        }
+      },
+      "analytics": {
+        "url": "http://localhost:4010",
+        "routes": {
+          "path": "/analytics",
+          "method": ["POST"]
+        }
+      },
+      "ok": {
+        "url": "http://localhost:4011",
+        "routes": {
+          "path": "/ok",
+          "method": ["POST"]
+        }
       }
     }
   }
