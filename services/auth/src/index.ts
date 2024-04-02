@@ -20,6 +20,10 @@ app.get("/health", (req, res) => {
   res.send(`Hello!, I am live on!, on port 4002`);
 });
 
+app.get("/", (req, res) => {
+  res.send(`<h1>Hello, I am auth service on port 4001</h1>`);
+})
+
 const port = process.env.PORT || 4001;
 const serviceName = process.env.SERVICE_NAME || "auth-service";
 

@@ -14,13 +14,17 @@ app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 
 // routes
-app.use("/email", router);
+app.use("/cart", router);
 
 app.get("/health", (req, res) => {
-  res.send(`Hello!, I am live on!, on port 4004`);
+  res.send(`Hello!, I am live on!, on port 4006`);
 });
 
-const port = process.env.PORT || 40045;
+app.get("/", (req, res) => {
+  res.send(`<h1>Hello, I am cart service on port 4006</h1>`);
+})
+
+const port = process.env.PORT || 4006;
 const serviceName = process.env.SERVICE_NAME || "email-service";
 
 app.listen(port, () => {

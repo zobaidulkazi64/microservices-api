@@ -18,10 +18,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/email", router);
 
 app.get("/health", (req, res) => {
-  res.send(`Hello!, I am live on!, on port 4004`);
+  res.send(`Hello!, I am live on!, on port 4005`);
 });
 
-const port = process.env.PORT || 4004;
+
+app.get("/", (req, res) => {
+  res.send(`<h1>Hello, I am email service on port 4005</h1>`);
+})
+
+const port = process.env.PORT || 4005;
 const serviceName = process.env.SERVICE_NAME || "email-service";
 
 app.listen(port, () => {

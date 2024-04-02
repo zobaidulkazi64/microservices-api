@@ -15,9 +15,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api', route);
 
 app.get('/health', (req, res) => {
-    res.status(200).send('Hello!, I am live on!, on port 4000');
+    res.status(200).send(`Hello!, I am live on!, on port ${process.env.PORT}`) `);
 })
-
+ 
+app.get("/", (req, res) => {
+  res.send(`<h1>Hello, I am ${process.env.SERVICE_NAME} service on port ${process.env.PORT}</h1>`);
+})
 
 
 const port = process.env.PORT || 4000
