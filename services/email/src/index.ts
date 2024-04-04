@@ -36,6 +36,12 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ message: "Internal Server Error" });
 });
 
+// 400 handler
+app.use((err, _req, res, _next) => {
+  console.error(err.stack);
+  res.status(400).json({ message: "Bad Request" });
+});
+
 const port = process.env.PORT || 4005;
 const serviceName = process.env.SERVICE_NAME || "email-service";
 
