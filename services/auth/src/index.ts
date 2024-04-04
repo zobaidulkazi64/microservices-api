@@ -22,7 +22,18 @@ app.get("/health", (req, res) => {
 
 app.get("/", (req, res) => {
   res.send(`<h1>Hello, I am auth service on port 4001</h1>`);
-})
+});
+
+// 404 handler
+app.use((_req, res) => {
+  res.status(404).json({ message: "Not Found" });
+});
+
+// 500 handler
+app.use((err, _req, res, _next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: "Internal Server Error" });
+});
 
 const port = process.env.PORT || 4001;
 const serviceName = process.env.SERVICE_NAME || "auth-service";
