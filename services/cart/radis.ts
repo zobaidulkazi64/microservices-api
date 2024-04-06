@@ -1,9 +1,9 @@
 import { Redis } from "ioredis";
-// import {} from './config';
+import { REDIS_HOST, REDIS_PORT } from "./config";
 
 const redis = new Redis({
-  host: process.env.REDIS_HOST || "localhost",
-  port: parseInt(process.env.REDIS_PORT || "6379"),
+  host: REDIS_HOST,
+  port: REDIS_PORT,
 });
 
 export default redis;
