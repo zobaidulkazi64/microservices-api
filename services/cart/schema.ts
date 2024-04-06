@@ -1,13 +1,7 @@
-import { z } from 'zod';
+import { z } from "zod";
 
-export const UserCreateSchema = z.object({
-	authUserId: z.string(),
-	name: z.string(),
-	email: z.string().email(),
-	address: z.string().optional(),
-	phone: z.string().optional(),
+export const CartItemSchema = z.object({
+  productId: z.string(),
+  inventoryId: z.string(),
+  quantity: z.number().int(),
 });
-
-export const UserUpdateSchema = UserCreateSchema.omit({
-	authUserId: true,
-}).partial();
