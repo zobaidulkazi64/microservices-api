@@ -18,4 +18,4 @@ jobs:
         run: yarn --frozen-lockfile
       - name: Start User Service
         working-directory: ./services/user
-        run: yarn dev
+        run: yarn start

@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec ts-node-dev -r tsconfig-paths/register ./src/index.ts",
+    "start": "ts-node ./src/index.ts",
     "build": "tsc && tsc-alias",
     "migrate:dev": "prisma migrate dev",
     "migrate:prod": "prisma migrate deploy"
