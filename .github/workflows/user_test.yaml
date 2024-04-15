@@ -17,5 +17,5 @@ jobs:
         run: yarn --frozen-lockfile
       - name: Change Directory to services/user/
         run: cd services/user/
-      - name: Build
-        run: yarn build
+      - name: dev
+        run: yarn dev
