@@ -1,10 +1,10 @@
-name: Test my Project Action
+name: User Test
 
 on: [push]
 
 jobs:
-  test-microservice:
-    name: Test Microservice
+  User-Test-Microservice:
+    name: User Service
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,5 +15,7 @@ jobs:
           node-version: "20"
       - name: Install Dependencies
         run: yarn --frozen-lockfile
+      - name: Change Directory to services/user/
+        run: cd services/user/
       - name: Build
         run: yarn build
