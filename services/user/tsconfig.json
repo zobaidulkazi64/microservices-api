@@ -18,11 +18,11 @@
 		"sourceMap": true,
 		"types": ["node", "express"],
 		"noImplicitAny": false,
-		"baseUrl": "./src",
+		"baseUrl": "./src/*",
 		"paths": {
-			"@/*": ["*"]
+			"@/*": ["./src/*", "./src/*.ts"]
 		}
 	},
-	"include": ["src/**/*"],
+	"include": ["./src/**/*", "./src/**/*"],
 	"exclude": ["node_modules"]
 }
