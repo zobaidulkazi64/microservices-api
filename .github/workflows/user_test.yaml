@@ -13,9 +13,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "20"
-      - name: Install Dependencies
+      - name: Install User Service Dependencies
+        working-directory: ./services/user
         run: yarn --frozen-lockfile
-      - name: Change Directory to services/user/
-        run: cd services/user/
-      - name: dev
+      - name: Start User Service
+        working-directory: ./services/user
         run: yarn dev
