@@ -15,5 +15,7 @@ jobs:
           node-version: "20"
       - name: Install Dependencies
         run: yarn --frozen-lockfile
-      - name: Run Tests
-        run: npm run test
+      - name: Lint
+        run: yarn lint
+      - name: Test
+        run: yarn test
